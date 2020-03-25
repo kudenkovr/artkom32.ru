@@ -62,6 +62,12 @@ class ControllerCheckoutCheckout extends Controller {
 		
 		
 		$data['logged'] = $this->customer->isLogged();
+		if ($data['logged']) {
+			$data['firstname'] = $this->customer->getFirstname();
+			$data['lastname'] = $this->customer->getLastname();
+			$data['email'] = $this->customer->getEmail();
+			$data['telephone'] = $this->customer->getTelephone();
+		}
 
 		if (isset($this->session->data['account'])) {
 			$data['account'] = $this->session->data['account'];

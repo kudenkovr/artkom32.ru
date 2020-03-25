@@ -3,7 +3,7 @@
 	background: #fff;
 	padding: 30px 60px;
 	position: relative;
-	z-index: 1;
+	z-index: 0;
 }
 
 .content {
@@ -19,14 +19,15 @@
 	background: #fff;
 	margin: 0 -40px;
 }
-.content h2 {
+.content h2, #content h2 {
 	font-size: 2em;
 	/*padding-bottom: 0.8em;
 	border-bottom: 1px solid #ebebeb;*/
 	margin-bottom: 1em;
 	font-weight: 400;
 }
-.content h3 {
+#content h2:not(:first-child) { margin-top: 2em; }
+.content h3, #content h3 {
 	font-size: 1.2em;
 	/*padding-bottom: 0.8em;
 	border-bottom: 1px solid #ebebeb;*/
@@ -41,7 +42,7 @@
 	margin-bottom: 35px;
 }
 
-.content-text p {
+.content-text p, #content p {
 	line-height: 1.5;
 	margin: 1em 0;
 }

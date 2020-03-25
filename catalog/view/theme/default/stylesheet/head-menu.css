@@ -36,3 +36,10 @@
 .personal-area-btn a:hover {
 	
 }
+
+.personal-area-info a {
+	text-decoration: none;
+}
+.personal-area-info a:hover {
+	text-decoration: underline;
+}

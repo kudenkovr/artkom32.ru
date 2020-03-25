@@ -38,6 +38,10 @@
 					<div class="col-0 head-contacts">ВТ-СБ: c 10ч до 19ч, перерыв: с 14ч до 15ч</div>
 					<div class="col-flex-filling head-phone">+7 (920) 837-48-70</div>
 					{% if logged %}
+						<div class="col-0 personal-area-info">
+							<b><a href="{{ account }}">{{ customer_name }}</a> </b> |
+							<a href="{{ logout }}">Выход</a>
+						</div>
 					{% else %}
 					<div class="col-0 personal-area-btn"><a href="{{ login }}">Личный кабинет</a></div>
 					{% endif %}

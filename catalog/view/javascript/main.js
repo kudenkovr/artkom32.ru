@@ -141,6 +141,15 @@ $(document).ready(function(){
 	}
 	$('.price').each(function(){ fixPrice(this) });
 	
+	
+	$('.alert').each(function(){
+		let $this = $(this),
+			text = $this.text();
+			type = '_info';
+		if ($this.hasClass('alert-success')) type='_success';
+		if ($this.hasClass('alert-error')) type='_error';
+		message(text, type, 10000);
+	});
 });
 
 

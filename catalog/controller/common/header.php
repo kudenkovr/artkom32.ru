@@ -57,7 +57,10 @@ class ControllerCommonHeader extends Controller {
 
 		$data['text_logged'] = sprintf($this->language->get('text_logged'), $this->url->link('account/account', '', true), $this->customer->getFirstName(), $this->url->link('account/logout', '', true));
 		
-		$data['home'] = $this->url->link('common/home');
+		$data['customer_email'] = $this->customer->getEmail();
+		$data['customer_name'] = $this->customer->getFirstname() .' '. $this->customer->getLastname();
+		
+		$data['home'] = '/';
 		$data['wishlist'] = $this->url->link('account/wishlist', '', true);
 		$data['logged'] = $this->customer->isLogged();
 		$data['account'] = $this->url->link('account/account', '', true);
@@ -81,6 +84,7 @@ class ControllerCommonHeader extends Controller {
 		$this->load->model('tool/style');
 		$data['style'] = $this->model_tool_style->getFilepath('main', array(
 			'fonts',
+			'opencart',
 			'rk.normalize-1.00.0',
 			'rk.grid-3.05',
 			'general',

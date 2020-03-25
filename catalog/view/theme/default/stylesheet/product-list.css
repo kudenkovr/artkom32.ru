@@ -242,7 +242,8 @@
 .products-item-btn[name=cart]:before { background-position: -72px 0; margin-right: 10px; margin-top: -2px; }
 .products-item-btn[name=cart]:hover:before { background-position: -72px -24px; }
 
-._tile .products-item-btn[name=buy] { font-size: 0; /* bye bye Button buy */ display: none; }
+button[name=buy] { /* bye bye Button buy */ display: none; }
+._tile .products-item-btn[name=buy] { font-size: 0; }
 ._list .products-item-btn[name=buy] { display: none; }
 ._list .products-item-btn[name=buy]:before { margin-right: 10px; }
 ._line .products-item-btn[name=buy] { display: none; }

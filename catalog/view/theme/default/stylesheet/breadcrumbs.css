@@ -1,11 +1,22 @@
-.breadcrumbs {
+.breadcrumbs, ul.breadcrumb {
 	margin-bottom: 1em;
 	color: #9faab7;
 	order: 0;
+	list-style: none;
 }
-.breadrumbs-item:not(:first-child):before {
+ul.breadcrumb li { display: inline-block; }
+.breadrumbs-item:not(:first-child):before,
+ul.breadcrumb li:not(:first-child):before {
 	content: "–";
 	margin: 0 10px;
 }
-.breadcrumbs a { text-decoration: none; color: #747f8c; }
-.breadcrumbs a:hover { color: #9faab7; }
+.breadcrumbs a, ul.breadcrumb a { text-decoration: none; color: #747f8c; }
+.breadcrumbs a:hover, ul.breadcrumb a:hover { color: #9faab7; }
+
+ul.breadcrumb li:first-child {
+	font-size: 0;
+}
+ul.breadcrumb li:first-child a:before {
+	content: 'Главная';
+	font-size: 1rem;
+}
