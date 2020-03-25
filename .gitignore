@@ -1,0 +1,14 @@
+.git/
+_*/
+image/
+**/cache/*
+*.log
+*.tmp
+*.orig
+catalog/view/theme/default/stylesheet/main.css
+admin/config.php
+storage/
+config.php
+php.ini
+*.zip
+*.sql
