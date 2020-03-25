@@ -24,6 +24,7 @@
 }
 .head .container, .head .row-flex { height: 100%; }
 .head *[class^=col] { align-self: center; max-height: 100%; }
+.img-responsive { max-width: 100%; }
 
 .head .head-logo {
 	font-size: 45px;

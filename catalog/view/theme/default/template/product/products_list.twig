@@ -1,4 +1,7 @@
 					<div class="col-flex-filling products _{%if type%}{{type}}{%else%}list{%endif%}">
+						{% if content_top %}
+							{{ content_top }}
+						{% endif %}
 						{% if products %}
 						<div class="row-flex products-menu">
 							<div class="col-flex-filling"></div>

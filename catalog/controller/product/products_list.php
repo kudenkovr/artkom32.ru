@@ -72,6 +72,10 @@ class ControllerProductProductsList extends Controller {
 
 		if (!isset($this->session->data['list_type'])) $this->session->data['list_type'] = 'list';
 		$data['type'] = $this->session->data['list_type'];
+		
+		if ($category_id==0) {
+			$data['content_top'] = $this->load->controller('common/content_top');
+		}
 
 		return $this->load->view('product/products_list', $data);
 	}
