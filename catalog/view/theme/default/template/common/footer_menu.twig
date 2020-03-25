@@ -1,0 +1,7 @@
+			{% if categories %}
+						<p class="footer-headline">Категории</p>
+						{% for category in categories %}
+						<p><a href="{{ category.href }}">{{ category.name }}</a></p>
+						{% endfor %}
+		</ul>
+		{% endif %} 

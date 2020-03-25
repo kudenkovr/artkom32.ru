@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+		<base href="{{ base }}">
+		<title>{{ title }}</title>
+		
+		<meta name="title" content="{{ title }}">
+		{% if description %}
+		<meta name="description" content="{{ description }}" />
+		{% endif %}
+		{% if keywords %}
+		<meta name="keywords" content="{{ keywords }}" />
+		{% endif %}
+		
+		<meta name="viewport" content="width=device-width">
+		
+		<!--[if lt IE 9]><script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<link rel="stylesheet" href="{{ style }}">
+		
+		<script src="catalog/view/javascript/jquery-1.10.1.min.js"></script>
+		<script src="catalog/view/javascript/main.js?v={{ version }}"></script>
+		
+		<link rel="icon" href="/favicon.png" type="image/png">
+		<!--<link rel="icon" href="/favicon.ico" type="image/x-icon">-->
+	</head>
+	
+	<body>
+		
+		<div class="head-menu">
+			<div class="container">
+				<div class="row-flex flex-middle">
+					<address class="col-0 head-contacts">г. Сельцо, ул. Куйбышева, д. 15, цокольный этаж</address>
+					<div class="col-0 head-contacts">ВТ-СБ: c 10ч до 19ч, перерыв: с 14ч до 15ч</div>
+					<div class="col-flex-filling head-phone">+7 (920) 837-48-70</div>
+					{% if logged %}
+					{% else %}
+					<div class="col-0 personal-area-btn"><a href="{{ login }}">Личный кабинет</a></div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="head">
+			<div class="container">
+				<div class="row-flex">
+					<div class="col-0 head-logo">
+						<a href="/">АртКом</a>
+					</div>
+					{% if showHeadMenu %}
+					<div class="col-0">
+						<button class="head-btn head-categories-btn" onclick="$(this).toggleClass('_active')"><span class="burger-white"></span>Каталог товаров</button>
+					</div>
+					{% endif %}
+					<div class="col-flex-filling head-search">
+						{{ search }}
+					</div>
+					<!--<div class="col-0 head-compare">
+						<a href="/" class="btn btn-compare">Сравнить</a>
+					</div>-->
+					{{ cart }}
+				</div>
+			</div>
+		</div>

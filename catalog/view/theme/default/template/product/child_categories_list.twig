@@ -1,0 +1,30 @@
+					<div class="col-flex-filling products _tile">
+						{% if categories %}
+						<div class="content_text _center">
+							<h3>{{ text_refine }}</h3>
+						</div>
+						<div class="row-flex colspacing-15 _center">
+							{% for category in categories %}
+							{% if category.total %}
+							<div class="col-0 products-item-wrap">
+								<a href="{{ category.href }}" class="flex-row products-item">
+									<div class="products-item-image _small" style="background-image:url('{{ category.thumb }}')"></div>
+									<div class="products-item-text">
+										<div class="products-item-description _center"><b>{{ category.name }}</b><br>
+										(Товаров: {{ category.total }})
+										</div>
+									</div>
+								</a>
+							</div>
+							{% endif %}
+							{% endfor %}
+						</div>
+						<div class="content_text _center">
+							<p><a href="{{ href_all }}" class="btn">{{ text_get_all }}</a></p>
+						</div>
+						{% else %}
+						<div class="content_text _center">
+							<p>{{ text_empty }}</p>
+						</div>
+						{% endif %}
+					</div>

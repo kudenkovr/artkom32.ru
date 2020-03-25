@@ -1,0 +1,9 @@
+					<div class="col-1-1 breadcrumbs">
+					{% for crumb in breadcrumbs %}
+						{% if crumb.href %}
+						<span class="breadrumbs-item"><a href="{{ crumb.href }}">{{ crumb.name }}</a></span>
+						{% else %}
+						<span class="breadrumbs-item">{{ crumb.name }}</span>
+						{% endif %}
+					{% endfor %}
+					</div>

@@ -1,0 +1,50 @@
+/* fix default OpenCart templates */
+.head + .container {
+	background: #fff;
+	padding: 30px 60px;
+	position: relative;
+	z-index: 1;
+}
+
+.content {
+	position: relative;
+	/*padding: 50px 0 80px;
+	/*background: #fbfbfb;*/
+}
+.content._light {
+	background: #e9e6dd url(design/icon-bg.png) center center;
+}
+.content > .container > .row-flex {
+	padding: 30px 30px 80px;
+	background: #fff;
+	margin: 0 -40px;
+}
+.content h2 {
+	font-size: 2em;
+	/*padding-bottom: 0.8em;
+	border-bottom: 1px solid #ebebeb;*/
+	margin-bottom: 1em;
+	font-weight: 400;
+}
+.content h3 {
+	font-size: 1.2em;
+	/*padding-bottom: 0.8em;
+	border-bottom: 1px solid #ebebeb;*/
+	margin-bottom: 1.5em;
+	font-weight: 700;
+}
+.content-hr {
+	border: none;
+	height: 1px;
+	background: #ebebeb;
+	margin-top:    25px;
+	margin-bottom: 35px;
+}
+
+.content-text p {
+	line-height: 1.5;
+	margin: 1em 0;
+}
+.content-text ul {
+	padding-left: 30px;
+}

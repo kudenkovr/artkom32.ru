@@ -1,0 +1,12 @@
+						<form class="row-flex">
+							<input type="hidden" name="route" value="product/search">
+							{% if category_id %}
+							<input type="hidden" name="category_id" value="{{ category_id }}">
+							{% endif %}
+							<div class="col-flex-filling">
+								<input type="text" name="search" class="head-search-input" placeholder="{{ text_search }}" value="{{ search }}">
+							</div>
+							<div class="col-0">
+								<input type="submit" class="btn btn-search" value="Найти">
+							</div>
+						</form>

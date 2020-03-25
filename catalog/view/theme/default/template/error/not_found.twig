@@ -1,0 +1,25 @@
+{{ header }}
+		<div class="content">
+			<div class="container product" data-id="{{ product_id }}">
+				<div class="row-flex">
+					<div class="col-1-1 breadcrumbs">
+					{% for crumb in breadcrumbs %}
+						{% if crumb.href %}
+						<span class="breadrumbs-item"><a href="{{ crumb.href }}">{{ crumb.text }}</a></span>
+						{% else %}
+						<span class="breadrumbs-item">{{ crumb.text }}</span>
+						{% endif %}
+					{% endfor %}
+					</div>
+					
+					<div class="col-1-1 content-text">
+						<h2>{{ heading_title }}</h2>
+						<p class="_center">{{ text_error }}</p>
+						<div class="buttons clearfix">
+							<div class="_center"><a href="{{ continue }}" class="btn">{{ button_continue }}</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{{ footer }}

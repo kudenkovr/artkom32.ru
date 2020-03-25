@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Dynamo CG";
+    src: url("dynamo-cg.eot");
+    src: url("dynamo-cg.eot?#iefix")format("embedded-opentype"),
+    url("dynamo-cg.woff") format("woff"),
+    url("dynamo-cg.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 300;
+}

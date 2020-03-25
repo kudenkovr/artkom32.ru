@@ -1,0 +1,92 @@
+.main-menu {
+	list-style: none;
+	width: 360px;
+	border-right: 1px solid #ebebeb;
+}
+.main-menu a {
+	display: block;
+	text-decoration: none;
+	position: relative;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	z-index: 1;
+}
+.main-menu-item {
+	position: relative;
+}
+.main-menu-category {
+	position: relative;
+	overflow: hidden;
+	padding: 0 20px 0 10px;
+	margin-left: -10px;
+	line-height: 3em;
+}
+.main-menu-item:not(:first-child) > .main-menu-category > a {
+	border-top: 1px solid #ebebeb;
+}
+.main-menu-category:before {
+	content: '';
+	display: block;
+	width: 100%; width: calc(100% - 10px);
+	height: 100%;
+	height: calc(100% - 1px);
+	position: absolute;
+	right: 100%;
+	bottom: 0;
+	transition: right .1s linear;
+	background: #ff374a;
+	border-radius: 2px 0 0 2px;
+	z-index: 3;
+}
+.main-menu-item:hover .main-menu-category:before { right: 10px; }
+.main-menu-category:after {
+	content: '';
+	display: block;
+	width: 10px;
+	height: 100%;
+	height: calc(100% - 1px);
+	position: absolute;
+	right: 100%;
+	bottom: 0;
+	transition: right .1s linear;
+	border-width: 1.5em 0 1.5em 10px;
+	border-style: solid;
+	border-color: transparent transparent transparent #ff374a;
+	z-index: 3;
+}
+.main-menu-item:hover .main-menu-category:after { right: 0px; }
+.main-menu-item:hover .main-menu-category > a { color: #fff; position: relative; z-index: 4; }
+
+.main-menu-drop {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 95%; left: calc(100% - 5px);
+	border: 1px solid #ebebeb;
+	background: #fff;
+	z-index: 2;
+	transform: translateY(-50%);
+	padding: 0 20px .5em;
+	line-height: 1.5;
+	list-style: none;
+	box-shadow: 0 10px 15px RGBA(0,0,0,.25);
+	width: 360px;
+	max-height: 480px;
+	overflow-y: auto;
+}
+.main-menu-subcategory { margin-top: .5em; }
+.main-menu-item:hover .main-menu-drop {
+	display: block;
+}
+.main-menu-subcategory > a { color: #000; font-weight: bold; }
+.main-menu-subcategory > a:hover { color: #ff374a; }
+
+.main-menu-third-list {
+	text-align: left;
+	font-size: .8rem;
+	list-style: none;
+	margin-bottom: .5em;
+}
+.main-menu-third-item:first-child:last-child { display: none; }
+.main-menu-third-item a:hover { text-decoration: underline; }

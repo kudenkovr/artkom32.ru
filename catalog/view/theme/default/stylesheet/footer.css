@@ -1,0 +1,38 @@
+.footer {
+	padding: 50px 0 80px;
+	color: #fff;
+	background: #1f2a37;
+	font-size: .9em;
+}
+.footer [class^=col] { position: relative; }
+.footer p:not([class]) { margin-bottom: 0.5em; }
+.footer-logo {
+	font-size: 50px;
+	color: #fff;
+	font-family: Dynamo CG;
+	line-height: 1;
+}
+.footer-description { font-size: .825em; }
+.footer-copyright {
+	margin-top: 13px;
+	color: #747f8c;
+	/*position: absolute;
+	bottom: 0;/**/
+}
+.footer-headline {
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-bottom: 1em;
+}
+.footer-phone {
+	font-size: 1.55em;
+	color: #ffdb69;
+	margin: .2em 0;
+	font-weight: bold;
+}
+.footer a {
+	text-decoration: none;
+}
+.footer a:hover {
+	color: #747f8c;
+}

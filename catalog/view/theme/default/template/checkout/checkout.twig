@@ -1,0 +1,119 @@
+{{ header }}
+		<div class="content">
+			<div class="container product">
+				<div class="row-flex">
+					{{ breadcrumbs_view }}
+
+					<div class="col-1-1">
+						<h2>{{ heading_title }}</h2>
+					</div>
+					
+					<!--{{ menu }}-->
+					<form class="order" method="post" id="orderForm">
+						<div class="col-1-2">
+							<label>Имя:</label>
+							<input type="text" name="firstname" class="textbox">
+						</div>
+						<div class="col-1-2">
+							<label>Фамилия:</label>
+							<input type="text" name="lastname" class="textbox">
+						</div>
+						<div class="col-1-2">
+							<label>E-mail:</label>
+							<input type="email" name="email" class="textbox">
+						</div>
+						<div class="col-1-2">
+							<label>Телефон:</label>
+							<input type="phone" name="telephone" class="textbox">
+						</div>
+					</form>
+					<div class="col-flex-filling">
+						<table class="cart-table">
+							<thead>
+								<tr>
+									<td>{{ column_image }}</td>
+									<td>{{ column_name }}</td>
+									<td>{{ column_model }}</td>
+									<td>Кол-во</td>
+									<td>{{ column_price }}</td>
+									<td>{{ column_total }}</td>
+								</tr>
+							</thead>
+							<tbody>
+            {% for product in products %}
+								<tr data-id="{{ product.product_id }}">
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="?route=product/product&product_id={{ product.product_id }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+            {% for product in vouchers %}
+								<tr>
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="{{ product.href }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+							</tbody>
+						</table>
+						
+						<div class="cart-total"><small>Итого:</small> <b class="price">{{ totals[1].text }} <span class="fraction"><s>Р</s></span></b></div>
+						
+						<div class="col-1 _center">
+							<button class="btn" id="orderBtn">Заказать</button>
+						</div>
+					</div>
+					
+					<script>
+					<!--
+						$('#orderForm input').keyup(function() {
+							let $error = $(this).next();
+							$error.slideUp(100);
+							setTimeout(function(){$error.remove()}, 110);
+						});
+						$('#orderBtn').click(function(){
+							let data = {
+								'firstname': $('[name=firstname]').val(),
+								'lastname' : $('[name=lastname]').val(),
+								'email'    : $('[name=email]').val(),
+								'telephone': $('[name=telephone]').val(),
+							};
+							$.post( '?route=checkout/checkout/add', data,
+								function(json) {
+									if (json.substr(0,1)=='<') {
+										console.error(json); return;
+									}
+									let data = $.parseJSON(json),
+										span = null;
+									if (!isEmptyObj(data.error)) {
+										for (let k in data.error) {
+											if ($('[name='+k+'] + *').length) {
+												$('[name='+k+'] + *').text(data.error[k]);
+											} else {
+												$('<div>')
+													.addClass('error')
+													.text(data.error[k])
+													.insertAfter($('[name='+k+']'))
+													.hide().slideDown(100);
+											}
+										}
+									} else if (data.redirect) {
+										document.location.href = data.redirect;
+									}
+								}
+							);
+							return false;
+						});
+					-->
+					</script>
+
+				</div>
+			</div>
+		</div>
+{{ footer }}

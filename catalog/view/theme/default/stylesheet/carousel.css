@@ -1,0 +1,54 @@
+.carousel {
+	position: relative;
+	height: 360px;
+	background: #747f8c;
+}
+
+.carousel-nav {
+	width: 100%;
+	height: 100%;
+	font-size: 0;
+	color: transparent;
+}
+
+.carousel-nav-left,
+.carousel-nav-right {
+	position: absolute;
+	height: 100%;
+	width: 100px;
+	top: 0;
+	cursor: pointer;
+}
+.carousel-nav-left { left: 0; }
+.carousel-nav-right { right: 0; }
+.carousel-nav-left:before,
+.carousel-nav-left:after,
+.carousel-nav-right:before,
+.carousel-nav-right:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -24px;
+	background: #fff;
+	width: 48px;
+	height: 4px;
+	border-radius: 2px;
+	transition: all .2s linear;
+}
+
+.carousel-nav-left:before,
+.carousel-nav-right:after { transform: rotate(-60deg); }
+.carousel-nav-left:after,
+.carousel-nav-right:before { transform: rotate(60deg); }
+.carousel-nav-left:before,
+.carousel-nav-right:before { margin-top: -19px }
+.carousel-nav-left:after,
+.carousel-nav-right:after { margin-top: 19px; }
+
+
+.carousel-nav-left:hover:before,
+.carousel-nav-right:hover:after { transform: rotate(-240deg); background-color: #ffdb69; }
+.carousel-nav-left:hover:after,
+.carousel-nav-right:hover:before { transform: rotate(240deg); background-color: #ffdb69; }

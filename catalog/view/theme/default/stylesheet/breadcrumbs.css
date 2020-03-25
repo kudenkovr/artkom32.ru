@@ -1,0 +1,11 @@
+.breadcrumbs {
+	margin-bottom: 1em;
+	color: #9faab7;
+	order: 0;
+}
+.breadrumbs-item:not(:first-child):before {
+	content: "–";
+	margin: 0 10px;
+}
+.breadcrumbs a { text-decoration: none; color: #747f8c; }
+.breadcrumbs a:hover { color: #9faab7; }

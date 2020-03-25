@@ -1,0 +1,27 @@
+			{% if categories %}
+		<ul class="col-0 main-menu">
+			{% for category in categories %}{% if category.total %}
+			<li class="main-menu-item">
+				<div class="main-menu-category"><a href="{{ category.href }}">{{ category.name }}</a></div>
+				{% if category.children %}
+				<ul class="main-menu-drop">
+					{% for level_2 in category.children %}{% if level_2.total %}
+					<li class="main-menu-subcategory">
+						<a href="{{ level_2.href }}" title="{{ level_2.name }}">{{ level_2.name }}</a>
+						{% if level_2.children %}
+						<ul class="row-flex colspacing-10 main-menu-third-list">
+							{% for level_3 in level_2.children %}{% if level_3.total %}
+							<li class="col-1-2 main-menu-third-item">
+								<a href="{{ level_3.href }}" title="{{ level_3.name }}">{{ level_3.name }}</a>
+							</li>
+							{% endif %}{% endfor %}
+						</ul>
+						{% endif %}
+					</li>
+					{% endif %}{% endfor %}
+				</ul>
+				{% endif %}
+			</li>
+			{% endif %}{% endfor %}
+		</ul>
+		{% endif %} 

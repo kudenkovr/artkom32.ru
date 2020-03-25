@@ -1,0 +1,95 @@
+.btn {
+	position: relative;
+	display: inline-block;
+	border: none;
+	color: #fff;
+	font: inherit;
+	height: 45px;
+	line-height: 45px;
+	border-radius: 6px;
+	background: #ff374a;
+	padding: 0 20px;
+	cursor: pointer;
+	transition: background .1s linear;
+	outline: none;
+	text-decoration: none;
+}
+[class*=btn-]:before {
+	content: '';
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(design/sprite.png);
+	vertical-align: middle;
+	transition: background-position .1s linear;
+	margin-right: 10px;
+	margin-top: -3px;
+}
+.btn-cart:before { background-position: -72px -48px; }
+.btn-buy:before { background-position: -96px -48px; }
+.btn-compare:before { background-position: -120px -48px; }
+.btn:hover, .btn._active { background: #ff5d5d; color: #fff; }
+
+.white-btn {
+	background: #fff;
+	border: 2px solid #ff374a;
+	line-height: 41px;
+	color: #ff374a;
+}
+.white-btn.btn-cart:before { background-position: -72px -24px; }
+.white-btn.btn-buy:before { background-position: -96px -24px; }
+.white-btn.btn-compare:before { background-position: -120px -24px; }
+.white-btn._active.btn-cart:before,
+.white-btn:hover.btn-cart:before { background-position: -72px -48px; }
+.white-btn._active.btn-buy:before,
+.white-btn:hover.btn-buy:before { background-position: -96px -48px; }
+.white-btn._active.btn-compare:before,
+.white-btn:hover.btn-compare:before { background-position: -120px -48px; }
+.white-btn:hover, .white-btn._active { border-color: #ff5d5d; }
+
+
+#messages {
+	width: 320px;
+	position: fixed;
+	top: 5px;
+	right: 20px;
+	z-index: 10;
+}
+.message {
+	padding: 5px 0;
+	line-height: 1.5;
+	font-size: .8em;
+	text-align: center;
+}
+.message p {
+	padding: 15px 25px;
+	border-radius: 4px;
+	box-shadow: 0 3px 7px RGBA(0,0,0,.25);
+}
+.message._error p { background: #ff374a; color: #fff; }
+.message._warning p { background: #ffdb69; }
+.message._success p { background: #8ef4c2; }
+.message._info p { background: #1f2a37; color: #fff; }
+.message a { text-decoration: none; }
+
+
+.textbox {
+	display: block;
+	color: inherit;
+	font: inherit;
+	height: 45px;
+	border-radius: 6px;
+	border: 1px solid #dad7cf;
+	width: 100%;
+	padding: 0 16px;
+	margin: 0.5em 0;
+	outline: none;
+	transition: all .1s linear;
+}
+.textbox:focus {
+	border-color: #ff374a;
+}
+.textbox + .error {
+	display: block;
+	color: #d12b3a;
+} .textbox + .error:before {content:'* '}

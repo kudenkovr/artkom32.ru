@@ -1,0 +1,66 @@
+{{ header }}
+		<div class="content">
+			<div class="container product">
+				<div class="row-flex">
+					<div class="col-1-1 breadcrumbs">
+					{% for crumb in breadcrumbs %}
+						{% if crumb.href %}
+						<span class="breadrumbs-item"><a href="{{ crumb.href }}">{{ crumb.text }}</a></span>
+						{% else %}
+						<span class="breadrumbs-item">{{ crumb.text }}</span>
+						{% endif %}
+					{% endfor %}
+					</div>
+
+					<div class="col-1-1">
+						<h2>{{ heading_title }}</h2>
+					</div>
+					
+					<!--{{ menu }}-->
+					
+					<div class="col-flex-filling">
+						<table class="cart-table">
+							<thead>
+								<tr>
+									<td>{{ column_image }}</td>
+									<td>{{ column_name }}</td>
+									<td>{{ column_model }}</td>
+									<td>Кол-во<!--{{ column_quantity }}--></td>
+									<td>{{ column_price }}</td>
+									<td>{{ column_total }}</td>
+								</tr>
+							</thead>
+							<tbody>
+            {% for product in products %}
+								<tr data-id="{{ product.product_id }}">
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="{{ product.href }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+            {% for product in vouchers %}
+								<tr>
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="{{ product.href }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+							</tbody>
+						</table>
+						
+						<div class="cart-total"><small>Итого:</small> <b class="price">{{ totals[1].text }}</b></div>
+						<div class="_center">
+							<a href="{{ checkout }}" class="btn">Оформить заказ</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+{{ footer }}

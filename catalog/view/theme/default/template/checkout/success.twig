@@ -1,0 +1,58 @@
+{{ header }}
+		<div class="content">
+			<div class="container">
+				<div class="row-flex">
+					{{ breadcrumbs_view }}
+
+					<div class="col-1-1">
+						<h2>{{ heading_title }}</h2>
+					</div>
+					
+					<!--{{ menu }}-->
+					<div class="order content_text">
+						<p><b>Имя:</b> {{ firstname }} {{ lastname }}</p>
+						<p><b>Email:</b> {{ email }}</p>
+						<p><b>Телефон:</b> {{ telephone }}</p>
+					</div>
+					<div class="col-flex-filling">
+						<table class="cart-table">
+							<thead>
+								<tr>
+									<td>{{ column_image }}</td>
+									<td>{{ column_name }}</td>
+									<td>{{ column_model }}</td>
+									<td>Кол-во</td>
+									<td>{{ column_price }}</td>
+									<td>{{ column_total }}</td>
+								</tr>
+							</thead>
+							<tbody>
+            {% for product in products %}
+								<tr data-id="{{ product.product_id }}">
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="?route=product/product&product_id={{ product.product_id }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+            {% for product in vouchers %}
+								<tr>
+									<td><img src="{{ product.thumb }}"></td>
+									<td><a href="{{ product.href }}">{{ product.name }}</a></td>
+									<td>{{ product.model }}</td>
+									<td>{{ product.quantity }}</td>
+									<td class="price">{{ product.price }}</td>
+									<td class="price">{{ product.total }}</td>
+								</tr>
+            {% endfor %}
+							</tbody>
+						</table>
+						
+						<div class="cart-total"><small>Итого:</small> <b class="price">{{ totals[1].text }} <span class="fraction"><s>Р</s></span></b></div>
+					</div>
+				</div>
+			</div>
+		</div>
+{{ footer }}

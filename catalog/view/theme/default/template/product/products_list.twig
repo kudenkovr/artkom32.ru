@@ -1,0 +1,48 @@
+					<div class="col-flex-filling products _{%if type%}{{type}}{%else%}list{%endif%}">
+						{% if products %}
+						<div class="row-flex products-menu">
+							<div class="col-flex-filling"></div>
+							<div class="col-0 products-style">
+								<button class="filter-btn products-style-btn" data-type="tile" title="Плитка"></button>
+								<button class="filter-btn products-style-btn" data-type="line" title="Список"></button>
+								<button class="filter-btn products-style-btn" data-type="list" title="Таблица"></button>
+							</div>
+						</div>
+						<div class="row-flex colspacing-15">
+							{% for product in products %}
+							<div data-id="{{ product.product_id }}" class="col-0 products-item-wrap">
+								<a href="{{ product.href }}" class="flex-row products-item">
+									<div class="products-item-image" style="background-image:url('{{ product.thumb }}')"></div>
+									<div class="products-item-text">
+										<div class="products-item-description">
+										<p>{{ product.description }}</p><p><small>Артикул: <strong>{{ product.sku }}</strong></small></p></div>
+										<div class="products-item-cost">
+											{% if product.special %}
+											<span class="products-item-special">{{ product.special }}<span class="fraction"> <s>Р</s></span></span>
+											<span class="products-item-oldcost">{{ product.price }}<span class="fraction"> <s>Р</s></span></span>
+											{% else %}
+											{{ product.price }} <span class="fraction"> <s>Р</s></span>
+											{% endif %}
+										</div>
+									</div>
+									<div class="products-item-control">
+										<button name="cart" class="products-item-btn">Добавить в корзину</button>
+										<button name="buy" class="products-item-btn">Купить в один клик</button><div></div>
+										<!--<button name="compare" onclick="$(this).toggleClass('_active');return false;" class="products-item-btn"></button><div></div>-->
+									</div>
+								</a>
+							</div>
+							{% endfor %}
+						</div>
+						{% else %}
+						<div class="content_text _center">
+							<p>{{ text_empty }}</p>
+						</div>
+						{% endif %}
+						
+						{% if pagination %}
+						<div class="col-1">
+							{{ pagination }}
+						</div>
+						{% endif %}
+					</div>

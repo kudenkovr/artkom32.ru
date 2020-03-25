@@ -1,0 +1,38 @@
+.head-menu {
+	height: 34px;
+	line-height: 34px;
+	/*border-bottom: 1px solid RGBA(0,0,0,.1);*/
+	border-bottom: 1px solid #dd4452;
+	background: #d12b3a;
+	color: #fff;
+	position: relative; z-index: 1;
+}
+.head-menu-item a {
+	display: inline-block;
+	text-decoration: none;
+	position: relative;
+}
+.head-menu-item a:hover { color: #ff374a; }
+.personal-area-btn a {
+	display: block;
+	text-decoration: none;
+	transition: opacity .1s linear;
+	/*margin: 0 0 -1px 0;*/
+	/*padding: 0 50px;*/
+	/*color: #fff;*/
+	/*background: #ff374a;*/
+}
+.personal-area-btn a:before  {
+	content: '';
+	display: inline-block;
+	width: 18px; height: 18px;
+	background: url(design/sprite.png);
+	background-position: -144px 0px;
+	vertical-align: middle;
+	margin-right: 10px;
+	margin-top: -3px;
+	transition: all .1s linear;
+}
+.personal-area-btn a:hover {
+	
+}

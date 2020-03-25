@@ -1,0 +1,29 @@
+/**
+ * RK Normalize
+ * 
+ * @version 1.00.0
+ * @author Kudenkov R. <kudenkovr@gmail.com>
+ */
+
+html {
+	font: normal 16px/1.333 Arial, Sans-Serif;
+	color: #333;
+}
+body, div, p, h1, h2, h3, h4, h5, h6, a, hr, td, ul,
+article, aside, figcaption, figure, footer, header, hgroup, nav, section, time { margin: 0; padding: 0; }
+body { overflow-x: hidden; }
+table { border-collapse: collapse; }
+hr { border: none; height: 1px; background: #333; }
+img { border: 0; }
+
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+/* HTML5 for IE */
+/* Into <head> insert code:
+ * <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+ */
+article, aside, figcaption, figure, footer, header, hgroup, nav, section { display: block; }

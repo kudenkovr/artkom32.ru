@@ -1,0 +1,100 @@
+{{ header }}
+		<div class="content">
+			<div class="container product" data-id="{{ product_id }}">
+				<div class="row-flex">
+					<div class="col-1-1 breadcrumbs">
+					{% for crumb in breadcrumbs %}
+						{% if crumb.href %}
+						<span class="breadrumbs-item"><a href="{{ crumb.href }}">{{ crumb.text }}</a></span>
+						{% else %}
+						<span class="breadrumbs-item">{{ crumb.text }}</span>
+						{% endif %}
+					{% endfor %}
+					</div>
+					
+					
+					
+					<div class="col-4-12 product-actions">
+						<h2 class="product-title">{{ heading_title }}</h2>
+						<p>Артикул: {{ sku }}</p>
+						<div class="products-item-cost product-cost">
+							{% if special %}
+							<span class="products-item-special">{{ special }}<span class="fraction"> <s>Р</s></span></span>
+							<span class="products-item-oldcost">{{ price }}<span class="fraction"> <s>Р</s></span></span>
+							{% else %}
+							{{ price }} <span class="fraction"> <s>Р</s></span>
+							{% endif %}
+						</div>
+						<div class="product-buttons">
+							<button class="btn btn-cart" name="cart">В корзину</button>
+							<button class="btn btn-buy white-btn" name="buy">Купить</button>
+							<!--<button class="btn btn-compare white-btn" name="compare">Сравнить</button>-->
+						</div>
+					</div>
+					
+					
+					
+					<div class="col-8-12 product-about">
+						<div class="row-flex colspacing-10 product-images">
+							{% if images %}
+							<div class="col-0 product-thumbs">
+								<a href="{{ popup }}" class="product-thumb _active">
+									<img src="{{ thumb }}" alt="{{ heading_title }}">
+								</a>
+								{% for image in images %}
+								<a href="{{ image.popup }}" class="product-thumb">
+									<img src="{{ image.thumb }}" alt="{{ heading_title }}">
+								</a>
+								{% endfor %}
+							</div>
+							{% endif %}
+							<div class="col-flex-filling">
+								{% if thumb %}
+								<a href="{{ popup }}" class="product-image">
+									<img src="{{ thumb }}" alt="{{ heading_title }}">
+								</a>
+								{% endif %}
+								
+								<div class="product-description">{{ description }}</div>
+							
+								<div class="product-attributes">
+									<div class="row-flex colspacing-10">
+										<span class="col-0">Производитель</span>
+										<span class="col-flex-filling product-dotes"></span>
+										<span class="col-attributes-value">{{ manufacturer }}</span>
+									</div>
+									{% if model %}
+									<div class="row-flex colspacing-10">
+										<span class="col-0">Модель</span>
+										<span class="col-flex-filling product-dotes"></span>
+										<span class="col-attributes-value">{{ model }}</span>
+									</div>
+									{% endif %}
+									{% if weight %}
+									<div class="row-flex colspacing-10">
+										<span class="col-0">Вес</span>
+										<span class="col-flex-filling product-dotes"></span>
+										<span class="col-attributes-value">{{ weight }}</span>
+									</div>
+									{% endif %}
+								{% if attribute_groups %}
+								{% for attribute_group in attribute_groups %}
+									<h3>{{ attribute_group.name }}</h3>
+									{% for attribute in attribute_group.attribute %}
+									<div class="row-flex colspacing-10">
+										<span class="col-0">{{ attribute.name }}</span>
+										<span class="col-flex-filling product-dotes"></span>
+										<span class="col-attributes-value">{{ attribute.text }}</span>
+									</div>
+									{% endfor %}
+								{% endfor %}
+								{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+{{ footer }}
