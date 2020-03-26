@@ -49,3 +49,9 @@
 .content-text ul {
 	padding-left: 30px;
 }
+
+@media (max-width: 767px) {
+	.content h2, #content h2 {
+		font-size: 1.6em;
+	}
+}

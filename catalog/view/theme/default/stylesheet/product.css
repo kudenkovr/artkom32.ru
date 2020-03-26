@@ -56,3 +56,20 @@
 }
 .col-attributes-value { width: 100px; white-space: nowrap; }
 .product-description { margin: 2.5em 0 1em; }
+
+
+@media (max-width: 479px) {
+	.product-about { order: 2; }
+	.product .product-title {
+		margin-top: .5em;
+		font-size: 1.6rem;
+	}
+	.product-cost { margin: .5em 0; }
+	.product-buttons {
+		text-align: right;
+		margin: -4rem -5px 1rem 0;
+	}
+	.product-about { padding-right: 15px; }
+	.product-attributes { font-size: .9em; }
+	.col-attributes-value { width: 150px; overflow: hidden; text-overflow: ellipsis; }
+}

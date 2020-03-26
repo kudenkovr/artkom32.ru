@@ -3,6 +3,7 @@
 	width: 360px;
 	border-right: 1px solid #ebebeb;
 }
+.product .main-menu { display: none; }
 .main-menu a {
 	display: block;
 	text-decoration: none;
@@ -113,8 +114,9 @@
 .main-menu-cover:after { transform: rotate(-45deg); }
 
 @media (max-width: 991px) {
-	[class*=col-].main-menu { display: none; }
-	[class*=col-].main-menu._active, .main-menu._active+.main-menu-cover { display: block; }
+	[class*=col-].main-menu { display: block; left: -100%; transition: left .3s ease-in-out; }
+	[class*=col-].main-menu._active { left: 0; }
+	.main-menu._active+.main-menu-cover { display: block; }
 	.main-menu {
 		position: fixed;
 		background: #fff;
