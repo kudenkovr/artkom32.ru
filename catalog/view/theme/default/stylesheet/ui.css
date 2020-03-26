@@ -51,7 +51,7 @@
 #messages {
 	width: 320px;
 	position: fixed;
-	top: 5px;
+	bottom: 5px;
 	right: 20px;
 	z-index: 10;
 }

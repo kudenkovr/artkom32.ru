@@ -54,15 +54,15 @@
 		<div class="head">
 			<div class="container">
 				<div class="row-flex">
-					<div class="xs-col-1 md-col-0 _xs-center _sm-center col-0 head-logo">
+					<div class="col-0 head-categories">
+						<div class="btn head-categories-btn" onclick="$('.head-categories-btn, .main-menu').toggleClass('_active')">
+							<span class="burger-white"></span>
+						</div>
+					</div>
+					<div class="xs-col-flex-filling md-col-0 _xs-center _sm-center col-0 head-logo">
 						<a href="/">АртКом</a>
 					</div>
-					{% if showHeadMenu %}
-					<div class="col-0">
-						<button class="head-btn head-categories-btn" onclick="$(this).toggleClass('_active')"><span class="burger-white"></span>Каталог товаров</button>
-					</div>
-					{% endif %}
-					<div class="col-flex-filling head-search">
+					<div class="xs-col-1 md-col-flex-filling head-search">
 						{{ search }}
 					</div>
 					<!--<div class="col-0 head-compare">
