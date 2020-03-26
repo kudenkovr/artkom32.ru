@@ -1,8 +1,9 @@
-.breadcrumbs, ul.breadcrumb {
+.row-flex > div.breadcrumbs, ul.breadcrumb {
 	margin-bottom: 1em;
 	color: #9faab7;
 	order: 0;
 	list-style: none;
+	font-size: .9em;
 }
 ul.breadcrumb li { display: inline-block; }
 .breadrumbs-item:not(:first-child):before,
@@ -18,5 +19,5 @@ ul.breadcrumb li:first-child {
 }
 ul.breadcrumb li:first-child a:before {
 	content: 'Главная';
-	font-size: 1rem;
+	font-size: .9rem;
 }

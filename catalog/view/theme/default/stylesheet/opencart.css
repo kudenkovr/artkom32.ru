@@ -105,3 +105,5 @@ div.swiper-viewport { z-index: 0; }
 #content a:not([class]):hover { color: #ff374a; }
 
 .alert { display: none; }
+
+.text-danger { color: #ff374a; }
