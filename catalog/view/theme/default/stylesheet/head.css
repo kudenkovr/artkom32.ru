@@ -204,7 +204,10 @@ button._active .burger-white:after { top: 1px; transform: rotate(-45deg); }
 
 
 @media (max-width:  991px) {
-	.row-flex .head-contacts { font-size: .8em; }
-	.row-flex .head-phone { font-size: .9em; }
-	.head-categories-btn, .head-cart-btn { font-size: 0; padding-right: 10px; }
+	.head-categories-btn, .head .btn-cart { font-size: 0; padding-right: 10px; }
+	.head-cart-dropdown:before, .head-cart-empty:before { right: 24px; }
+}
+@media (max-width: 767px) {
+	.head-logo { margin-bottom: 10px; margin-top: -10px; }
+	.head-cart-dropdown, .head-cart-empty { top: 96px; }
 }

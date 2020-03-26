@@ -34,16 +34,16 @@
 		<div class="head-menu">
 			<div class="container">
 				<div class="row-flex flex-middle">
-					<address class="col-0 head-contacts">г. Сельцо, ул. Куйбышева, д. 15, цокольный этаж</address>
-					<div class="col-0 head-contacts">ВТ-СБ: c 10ч до 19ч, перерыв: с 14ч до 15ч</div>
-					<div class="col-flex-filling head-phone">+7 (920) 837-48-70</div>
+					<address class="xs-col-0 head-contacts">г. Сельцо, ул. Куйбышева, д. 15, цокольный этаж</address>
+					<div class="xs-col-0 head-contacts">ВТ-СБ: c 10ч до 19ч, перерыв: с 14ч до 15ч</div>
+					<div class="xs-col-flex-filling head-phone">+7 (920) 837-48-70</div>
 					{% if logged %}
-						<div class="col-0 personal-area-info">
+						<div class="nm-col-0 personal-area-info">
 							<b><a href="{{ account }}">{{ customer_name }}</a> </b> |
 							<a href="{{ logout }}">Выход</a>
 						</div>
 					{% else %}
-					<div class="col-0 personal-area-btn"><a href="{{ login }}">Личный кабинет</a></div>
+					<div class="nm-col-0 personal-area-btn"><a href="{{ login }}">Личный кабинет</a></div>
 					{% endif %}
 				</div>
 			</div>
@@ -54,7 +54,7 @@
 		<div class="head">
 			<div class="container">
 				<div class="row-flex">
-					<div class="col-0 head-logo">
+					<div class="xs-col-1 md-col-0 _xs-center _sm-center col-0 head-logo">
 						<a href="/">АртКом</a>
 					</div>
 					{% if showHeadMenu %}

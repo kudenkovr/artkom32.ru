@@ -43,3 +43,16 @@
 .personal-area-info a:hover {
 	text-decoration: underline;
 }
+
+
+@media (min-width: 768px) and (max-width: 1199px) {
+	.head-menu { font-size: .9em; }
+	.head-contacts:nth-child(2) { display: none; }
+}
+@media (max-width: 767px) {
+	.head-menu *.head-contacts { display: none; }
+}
+@media (max-width: 479px) {
+	.head-menu *.head-phone { display: none; }
+	.head-menu .row-flex { justify-content: flex-end; }
+}
